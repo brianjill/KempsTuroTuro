@@ -1,2 +1,3 @@
 # KempsTuroTuro
-C# WebAPI AngularJS
+C# WebAPI AngularJS web application
+
