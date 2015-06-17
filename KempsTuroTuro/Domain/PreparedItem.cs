@@ -12,6 +12,14 @@ namespace KempsTuroTuro.Domain
      * being that PreparedItem is not booked into inventory when the item is manufactured; nor is it removed from inventory when it is sold; 
      * rather the inventory for the BulkItem constituent parts as defined by the recipe is reduced when the PreparedItem is sold.
      */
+
+    /*
+     PreparedItem "Farmhouse Breakfast", is made up of 2 eggs, 1 tomato, 3 rashers of bacon & two slices of toast. 
+     * As part of the 'end of day' process, total number of farmhouse breakfasts sold is combined with the relevant 
+     * recipe to get the total number of eggs, tomatos, packets of bacon & loaves of bread sold. PreparedItem "Deluxe Carwash" 
+     * is made up of 100ml detergent & 500ml wax (along with hot & cold water). Again, individual car-washes are totaled across the day,
+     * and inventory for detergent & wax are decremented as part of the 'end-of-day' process.
+     */
     public class PreparedItem
     {
         [StringLength(32)]
@@ -20,6 +28,7 @@ namespace KempsTuroTuro.Domain
         [ForeignKey("ItemId")]
         public virtual Item Item { get; set; }
 
+        //The number of minutes that a prepared food item may be held ready for sale. At the end of this time, the item must not be sold to a customer.
         public decimal FoodItemHoldingTime { get; set; }
     }
 }

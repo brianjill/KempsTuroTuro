@@ -20,18 +20,23 @@ namespace KempsTuroTuro.Domain
      */
     public class Recipe
     {
+        
         public int Id { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; }
+        public string ItemId { get; set; }
+        [ForeignKey("ItemId")]
+        public virtual Item Item { get; set; }
 
-        public int RecipeVariationOf { get; set; }
+        public int? RecipeVariationOf { get; set; }
 
-        public DateTime LastChangeDate { get; set; }
+        public DateTime? LastChangeDate { get; set; }
 
         public DateTime CreateDate { get; set; }
 
         public RecipeStatus StatusCode { get; set; }
 
         public string Description { get; set; }
+
+        
     }
 }

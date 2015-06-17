@@ -25,8 +25,13 @@ namespace KempsTuroTuro.Domain
         [Key]
         public string Id { get; set; }
 
+        //A flag to indicate that the RETAIL STORE is authorized to stock this particular ITEM.
         public bool AuthorizedForSaleFlag { get; set; }
+
+        //A flag to indicate whether this ITEM can be discounted.
         public bool DiscountFlag { get; set; }
+
+        //A flag to denote whether this ITEM was validated (scanned) during verification of the ITEM table.
         public bool PriceAuditFlag { get; set; }
 
         [StringLength(40)]
@@ -39,6 +44,7 @@ namespace KempsTuroTuro.Domain
 
         public ItemType TypeCode { get; set; }
 
+        //An ITEM for which there is a substitute available for sale within the RETAIL STORE.
         public bool SubstituteIdentifiedFlag { get; set; }
 
 
