@@ -13,6 +13,11 @@ namespace KempsTuroTuro.Domain
        Inactive,
        Testing
     }
+
+    /*
+     * The Recipe or Bill of Materials that is used to assemble a PreparedItem from other (usually Bulk) Items. 
+     * A recursive relationship "variations produce " allows recipe variations to be recorded.
+     */
     public class Recipe
     {
         public int Id { get; set; }

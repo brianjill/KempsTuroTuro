@@ -15,6 +15,10 @@ namespace KempsTuroTuro.Domain
         SelectedGroup,       //selected group
     }
 
+    /*
+     * The lowest level of merchandise for which inventory and sales records are retained within the retail store. 
+     * It is analogous to the SKU ( Stock Keeping Unit).
+     */
     public class Item
     {
         [StringLength(32)]
