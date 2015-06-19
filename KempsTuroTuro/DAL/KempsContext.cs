@@ -27,7 +27,7 @@ namespace KempsTuroTuro.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<PreparedItem>().Property(x => x.FoodItemHoldingTime).HasPrecision(4, 0);
-            modelBuilder.Entity<RawMaterialComponent>().Property(x => x.UnitAmount).HasPrecision(3, 0);
+            modelBuilder.Entity<RawMaterialComponent>().Property(x => x.UnitAmount).HasPrecision(3, 2);
             modelBuilder.Entity<RecipeLineItem>().Property(x => x.ServingsCount).HasPrecision(3, 0);
         }
     }

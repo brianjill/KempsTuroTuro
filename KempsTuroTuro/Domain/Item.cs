@@ -13,6 +13,7 @@ namespace KempsTuroTuro.Domain
         Combined,        //combined
         Prepared,       //prepared
         SelectedGroup,       //selected group
+        None
     }
 
     /*

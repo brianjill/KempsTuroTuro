@@ -97,14 +97,14 @@ namespace KempsTuroTuro.Migrations
             {
                 new Item
                 {
-                    Id="Boil_Quail_Egg",
-                    Name = "boiled quial egg",
+                    Id="Boil_Duck_Egg",
+                    Name = "boiled duck egg",
                     AuthorizedForSaleFlag = false,
                     DiscountFlag = false,
                     PriceAuditFlag = false,
                     SubstituteIdentifiedFlag = false,
                     TypeCode = ItemType.Prepared,
-                    Description = "itlog ng pugo"
+                    Description = "itlog ng pato"
                 },
                 new Item
                 {
@@ -129,6 +129,90 @@ namespace KempsTuroTuro.Migrations
                     TypeCode = ItemType.Prepared,
                     Description = "hard boiled eggs coated with batter and deep-fried"
 
+                },
+                new Item
+                {
+                    Id="Flour",
+                    Name = "flour",
+                    AuthorizedForSaleFlag = true,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.Stock,
+                    Description = "Harina"
+
+                },
+                new Item
+                {
+                    Id="Cornstarch",
+                    Name = "cornstarch",
+                    AuthorizedForSaleFlag = true,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.Stock,
+                    Description = "Gawgaw"
+
+                },
+                new Item
+                {
+                    Id="Water",
+                    Name = "water",
+                    AuthorizedForSaleFlag = false,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.None,
+                    Description = "Tubig"
+
+                },
+                new Item
+                {
+                    Id="Anatto_Powder",
+                    Name = "anatto powder",
+                    AuthorizedForSaleFlag = true,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.Stock,
+                    Description = "pinulbos na atsuete"
+
+                },
+                new Item
+                {
+                    Id="Salt",
+                    Name = "salt",
+                    AuthorizedForSaleFlag = true,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.Stock,
+                    Description = "asin"
+
+                },
+                new Item
+                {
+                    Id="Black_Pepper",
+                    Name = "black pepper",
+                    AuthorizedForSaleFlag = true,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.Stock,
+                    Description = "paminta"
+
+                },
+                new Item
+                {
+                    Id="Frying_Oil",
+                    Name = "frying oil",
+                    AuthorizedForSaleFlag = true,
+                    DiscountFlag = false,
+                    PriceAuditFlag = false,
+                    SubstituteIdentifiedFlag = false,
+                    TypeCode = ItemType.Stock,
+                    Description = "mantika"
+
                 }
             };
 
@@ -141,10 +225,66 @@ namespace KempsTuroTuro.Migrations
                 new RawMaterialComponent
                 {
                     Id = 1,
-                    ItemId = "Boil_Quail_Egg",
+                    ItemId = "Boil_Duck_Egg",
                     UnitOfMeasureCode = "pcs",
+                    UnitAmount = 8,
+                    Description = "8 pcs of boiled duck egg"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 2,
+                    ItemId = "Flour",
+                    UnitOfMeasureCode = "cup",
                     UnitAmount = 1,
-                    Description = "1 pcs of boiled quial egg"
+                    Description = "1 cup flour"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 3,
+                    ItemId = "Cornstarch",
+                    UnitOfMeasureCode = "tbsp",
+                    UnitAmount = 3,
+                    Description = "3 tbsp cornstarch"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 4,
+                    ItemId = "Water",
+                    UnitOfMeasureCode = "cup",
+                    UnitAmount = (decimal)0.5,
+                    Description = "1/2 cup water"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 5,
+                    ItemId = "Anatto_Powder",
+                    UnitOfMeasureCode = "tbsp",
+                    UnitAmount = 1,
+                    Description = "1 tbsp anatto powder"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 6,
+                    ItemId = "Salt",
+                    UnitOfMeasureCode = "tsp",
+                    UnitAmount = (decimal) 0.5,
+                    Description = "1/2 tsp salt"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 7,
+                    ItemId = "Black_Pepper",
+                    UnitOfMeasureCode = "tsp",
+                    UnitAmount = (decimal) 0.5,
+                    Description = "1/2 tsp ground black pepper"
+                },
+                new RawMaterialComponent
+                {
+                    Id = 8,
+                    ItemId = "Frying_Oil",
+                    UnitOfMeasureCode = "cup",
+                    UnitAmount = 2,
+                    Description = "2 cup frying oil"
                 }
 
             };
@@ -191,12 +331,74 @@ namespace KempsTuroTuro.Migrations
                 {
                     RecipeId = 1,
                     RawMaterialComponentId = 1,
-                    ServingsCount = 18,
+                    ServingsCount = 1,
                     CostInclusiveFlag = true,
                     WasteFlag = false,
                     KeyIngredientFlag = true
                 },
-
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 2,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = true
+                },
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 3,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = false
+                },
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 4,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = true
+                },
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 5,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = false
+                },
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 6,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = true
+                },
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 7,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = true
+                },
+                new RecipeLineItem
+                {
+                    RecipeId = 1,
+                    RawMaterialComponentId = 8,
+                    ServingsCount = 1,
+                    CostInclusiveFlag = true,
+                    WasteFlag = false,
+                    KeyIngredientFlag = true
+                }
             };
 
             ingredients.ForEach(u => context.RecipeLineItems.AddOrUpdate(m => new {m.RecipeId,m.RawMaterialComponentId}, u));

@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201506171355012_RecipeItemDataChanges.Designer.cs">
       <DependentUpon>201506171355012_RecipeItemDataChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506191238491_ChangesRecipe.cs" />
+    <Compile Include="Migrations\201506191238491_ChangesRecipe.Designer.cs">
+      <DependentUpon>201506191238491_ChangesRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -283,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506171355012_RecipeItemDataChanges.resx">
       <DependentUpon>201506171355012_RecipeItemDataChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506191238491_ChangesRecipe.resx">
+      <DependentUpon>201506191238491_ChangesRecipe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
