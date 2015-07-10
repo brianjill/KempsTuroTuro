@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Kemps Application</title>
+        <!-- css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+        <!-- libraries -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- apps base -->
+        <script src="App/app.js"></script>
+        
+        <!-- app services -->
+        <script src="App/shared/resourceFactory.js"></script>
+        <!-- app directives -->
+
+        <!-- app controller -->
+        <script src="App/components/home/homeCtrl.js"></script>
+    </head>
+<body data-ng-app ="kempsApp">
+    <div class="container" ng-view>
+        
+
+    </div>
+</body>
+</html>
