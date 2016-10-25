@@ -29,7 +29,17 @@ namespace KempsTuroTuro.Service
         public string GetRecipeDetails(int id)
         {
             var recipe = _recipeRepository.GetById(id);
-            return JsonConvert.SerializeObject(Mapper.Map<Recipe,RecipeIntroVm>(recipe));
+
+            var recipeDetails = new RecipeDetailsVm
+            {
+                Description = recipe.Description,
+                Status = recipe.StatusCode.ToString(),
+                Id = recipe.Id,
+                Name = recipe.Item.Name
+            };
+
+
+            return JsonConvert.SerializeObject(recipeDetails);
         }
 
         public string GetRecipes()

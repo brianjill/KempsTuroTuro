@@ -131,6 +131,8 @@
     <Content Include="App\app.js" />
     <Content Include="App\components\home\home.html" />
     <Content Include="App\components\home\homeCtrl.js" />
+    <Content Include="App\components\recipe\recipeCtrl.js" />
+    <Content Include="App\components\recipe\recipes.html" />
     <Content Include="App\shared\resourceFactory.js" />
     <Content Include="bower_components\angular-resource\angular-resource.js" />
     <Content Include="bower_components\angular-resource\angular-resource.min.js" />

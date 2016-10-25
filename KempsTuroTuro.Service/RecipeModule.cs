@@ -13,7 +13,7 @@ namespace KempsTuroTuro.Service
         {
             
             Get["/recipe"] = parameters => recipeService.GetRecipes();
-            
+            Get["/recipe/{id}"] = parameters => recipeService.GetRecipeDetails(parameters.id);
         }
     }
 }
