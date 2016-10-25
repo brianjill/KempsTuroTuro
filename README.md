@@ -1,3 +1,3 @@
 # KempsTuroTuro
-C# WebAPI AngularJS web application
+C# Nancy AngularJS web application
 

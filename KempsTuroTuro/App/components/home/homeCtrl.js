@@ -1,13 +1,15 @@
-﻿kempsApp.controller('homeCtrl', ['$scope', 'recipeService', function ($scope, recipeService) {
+﻿kempsApp.controller('homeCtrl', ['$scope','$http', 'recipeService', function ($scope, $http, recipeService) {
 
-        console.log('here');
-        $scope.first = "Mabuhay";
+        
+    $scope.first = "Mabuhay";
+    
         recipeService.getAllRecipes().$promise.then(
             function(result) {
-
                 $scope.recipeList = result;
             }
             );
+            
+   
         /*
         recipeService.getAllRecipes().$promise.then(
             function(data) {

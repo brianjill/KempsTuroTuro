@@ -14,8 +14,9 @@ kempsApp.factory('recipeService', ['$resource',
                 }
             });
 
-        var getAllRecipes = function() {
-            recipe.query();
+        var getAllRecipes = function () {
+            console.log('here');
+            return recipe.query();
         }
 
         var getRecipeDetails = function(recipeId) {
