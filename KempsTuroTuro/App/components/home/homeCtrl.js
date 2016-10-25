@@ -19,7 +19,14 @@
             */
     }
 ])
-
+.directive('recipe', function () {
+    return {
+        restrict: 'A',
+        replace: 'true',
+        templateUrl: '/app/components/recipe/recipe.html',
+        controller: 'recipeCtrl'
+    }
+})
 .directive('recipes', function () {
     return {
         restrict: 'A',
@@ -28,16 +35,3 @@
         controller: 'recipeCtrl'
     }
 });
-
-
-/*
-    .directive('recipes', function () {
-    return {
-        restrict: 'A',
-        replace: 'true',
-        templateUrl: '/app/components/home/home.html',
-        controller: 'homeCtrl'
-    }
-});
-
-*/

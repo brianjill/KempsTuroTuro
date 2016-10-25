@@ -9,6 +9,7 @@
         <tr ng-repeat="recipe in recipeList">
             <td>{{recipe.Id}}</td>
             <td>{{recipe.Name}}</td>
+            <td><input type="button" value="edit" class="btn pull-left" data-ng-click="editRecipe(recipe)"></td>
         </tr>
     </tbody>
 </table>

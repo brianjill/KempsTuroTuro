@@ -28,6 +28,7 @@ namespace KempsTuroTuro.Service
 
         public string GetRecipeDetails(int id)
         {
+            
             var recipe = _recipeRepository.GetById(id);
 
             var recipeDetails = new RecipeDetailsVm

@@ -15,11 +15,12 @@ kempsApp.factory('recipeService', ['$resource',
             });
 
         var getAllRecipes = function () {
-            console.log('here');
+            
             return recipe.query();
         }
 
-        var getRecipeDetails = function(recipeId) {
+        var getRecipeDetails = function (recipeId) {
+            console.log(recipeId);
             return recipe.getRecipe({id:recipeId});
         }
 
