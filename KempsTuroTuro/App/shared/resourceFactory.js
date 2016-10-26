@@ -9,7 +9,7 @@ kempsApp.factory('recipeService', ['$resource',
                 getRecipe: {
                     url: baseUrl + '/recipe/:id',
                     method: 'GET',
-                    isArray: true,
+                    isArray: false,
                     params: { id: '@id' }
                 }
             });
@@ -20,8 +20,9 @@ kempsApp.factory('recipeService', ['$resource',
         }
 
         var getRecipeDetails = function (recipeId) {
-            console.log(recipeId);
-            return recipe.getRecipe({id:recipeId});
+            
+            var recipeDetails = recipe.getRecipe({ id: recipeId });
+            return recipeDetails;
         }
 
         return {

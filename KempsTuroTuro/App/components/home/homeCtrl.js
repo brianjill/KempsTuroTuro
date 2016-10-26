@@ -1,23 +1,25 @@
-﻿kempsApp.controller('homeCtrl', ['$scope','$http', 'recipeService', function ($scope, $http, recipeService) {
+﻿kempsApp.controller('homeCtrl', ['$scope', function ($scope) {
 
         
     $scope.first = "Mabuhay";
-    /*
-        recipeService.getAllRecipes().$promise.then(
-            function(result) {
-                $scope.recipeList = result;
-            }
-            );
-      */      
-   
-        /*
-        recipeService.getAllRecipes().$promise.then(
-            function(data) {
-                console.log(data);
-                $scope.recipeList = data;
-            });
-            */
-    }
+    
+    
+            /*
+                recipeService.getAllRecipes().$promise.then(
+                    function(result) {
+                        $scope.recipeList = result;
+                    }
+                    );
+              */
+
+            /*
+            recipeService.getAllRecipes().$promise.then(
+                function(data) {
+                    console.log(data);
+                    $scope.recipeList = data;
+                });
+                */
+        }
 ])
 .directive('recipe', function () {
     return {
