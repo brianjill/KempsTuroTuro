@@ -11,17 +11,29 @@ namespace KempsTuroTuro.Service
 {
     public class RecipeModule : NancyModule
     {
-        public RecipeModule(IRecipeService recipeService)
+        public RecipeModule(IRecipeService recipeService) :base("/recipe")
         {
             
-            Get["/recipe"] = parameters => recipeService.GetRecipes();
-            Get["/recipe/{id}"] = parameters => recipeService.GetRecipeDetails(parameters.id);
-            Post["/recipe"] = parameters =>
+            Get["/"] = parameters => recipeService.GetRecipes();
+
+            Get["/{id}"] = parameters => recipeService.GetRecipeDetails(parameters.id);
+
+            Post["/save"] = parameters =>
             {
                 var post = this.Bind<RecipeDetailsVm>();
                 recipeService.Save(post);
                 return Response.AsJson(post);
             };
+
+            Post["/add"] = parameters =>
+            {
+                var post = this.Bind<RecipeDetailsVm>();
+                recipeService.Add(post);
+                return Response.AsJson(post);
+            };
+
+            Delete[@"/{id})"] = parameters => recipeService.Delete(parameters.id);
+
         }
     }
 }

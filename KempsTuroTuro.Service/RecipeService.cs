@@ -17,6 +17,8 @@ namespace KempsTuroTuro.Service
         string GetRecipeDetails(int id);
         string GetRecipes();
         void Save(RecipeDetailsVm recipeDetails);
+        void Add(RecipeDetailsVm recipeDetails);
+        void Delete(int id);
     }
 
     public class RecipeService : IRecipeService
@@ -76,6 +78,26 @@ namespace KempsTuroTuro.Service
             recipe.StatusCode = (RecipeStatus)Enum.Parse(typeof(RecipeStatus), recipeDetails.Status); 
             
             _recipeRepository.Update(recipe);
+            _unitOfWork.SaveChanges();
+        }
+
+        public void Add(RecipeDetailsVm recipeDetails)
+        {
+            var recipe = new Recipe
+            {
+                Description = recipeDetails.Description,
+                Item = {Name = recipeDetails.Name},
+                StatusCode = (RecipeStatus) Enum.Parse(typeof(RecipeStatus), recipeDetails.Status)
+            };
+
+            _recipeRepository.Add(recipe);
+            _unitOfWork.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var recipe = _recipeRepository.GetById(id);
+            _recipeRepository.Delete(recipe);
             _unitOfWork.SaveChanges();
         }
     }

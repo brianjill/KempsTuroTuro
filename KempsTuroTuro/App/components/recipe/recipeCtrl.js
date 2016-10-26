@@ -25,12 +25,22 @@
                 );
         };
 
-        $scope.addRecipe = function(recipe) {
+        $scope.addRecipe = function (recipeDetails) {
+            console.log("adding....");
 
+            recipeService.addRecipe(recipeDetails);
+            $scope.saveMessage = "Recipe has been added successfully";
+
+            setTimeout(function () {
+                $scope.$apply(function () {
+                    $scope.enableRecipeDetails = false;
+                });
+            },
+                1000);
         };
 
         $scope.saveRecipe = function(recipeDetails) {
-            console.log("saved");
+            
             recipeService.saveRecipe(recipeDetails);
             $scope.saveMessage = "Recipe has been updated successfully";
 
