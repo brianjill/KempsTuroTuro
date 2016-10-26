@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using AutoMapper;
 using KempsTuroTuro.Data.Domain;
+using KempsTuroTuro.Data.Interface;
 using KempsTuroTuro.Data.Repository;
 using KempsTuroTuro.Service.Model;
 using Newtonsoft.Json;
@@ -15,15 +16,19 @@ namespace KempsTuroTuro.Service
     {
         string GetRecipeDetails(int id);
         string GetRecipes();
+        void Save(RecipeDetailsVm recipeDetails);
     }
 
     public class RecipeService : IRecipeService
     {
         private readonly IRecipeRepository _recipeRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public RecipeService(IRecipeRepository recipeRepository)
+
+        public RecipeService(IRecipeRepository recipeRepository, IUnitOfWork unitOfWork)
         {
             _recipeRepository = recipeRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public string GetRecipeDetails(int id)
@@ -60,6 +65,18 @@ namespace KempsTuroTuro.Service
 
             return JsonConvert.SerializeObject(recipesVm);
 
+        }
+
+        public void Save(RecipeDetailsVm recipeDetails)
+        {
+            var recipe = _recipeRepository.GetById(recipeDetails.Id);
+
+            recipe.Description = recipeDetails.Description;
+            recipe.Item.Name = recipeDetails.Name;
+            recipe.StatusCode = (RecipeStatus)Enum.Parse(typeof(RecipeStatus), recipeDetails.Status); 
+            
+            _recipeRepository.Update(recipe);
+            _unitOfWork.SaveChanges();
         }
     }
 

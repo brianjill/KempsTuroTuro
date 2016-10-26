@@ -1,60 +1,64 @@
-﻿<div class="form-group" ng-show="enableRecipeDetails">
-    <div class="col-md-2">
-        <label class="control-label" for="inputId">Recipe Id</label>
-        
-    </div>
-    <div class="col-md-10">
-        
-        <input class="form-control"
-               id="inputId"
-               type="text"
-               placeholder=""
-               ng-model="recipeDetails.Id"
-               required
-               numeric-only />
-    </div>
-    <div class="col-md-2">
-        <label class="control-label" for="inputName">Name</label>
-        
-    </div>
-    <div class="col-md-10">
-        
-        <input class="form-control"
-               id="inputName"
-               type="text"
-               placeholder=""
-               ng-model="recipeDetails.Name"
-               required />
-    </div>
-    
-    <div class="col-md-2">
-        <label class="control-label" for="inputDesc">Description</label>
+﻿<div>
+    <div class="form-group" ng-show="enableRecipeDetails">
+        <div class="col-md-2">
+            <label class="control-label" for="inputId">Recipe Id</label>
 
-    </div>
-    <div class="col-md-10">
+        </div>
+        <div class="col-md-10">
 
-        <input class="form-control"
-               id="inputDesc"
-               type="text"
-               placeholder=""
-               ng-model="recipeDetails.Description"
-               required />
-    </div>
-    
-    <div class="col-md-2">
-        <label class="control-label" for="inputStatus">Status</label>
+            <input class="form-control"
+                   id="inputId"
+                   type="text"
+                   placeholder=""
+                   ng-model="recipeDetails.Id"
+                   required
+                   numeric-only />
+        </div>
+        <div class="col-md-2">
+            <label class="control-label" for="inputName">Name</label>
 
-    </div>
-    <div class="col-md-10">
+        </div>
+        <div class="col-md-10">
 
-        <input class="form-control"
-               id="inputStatus"
-               type="text"
-               placeholder=""
-               ng-model="recipeDetails.Status"
-               required />
+            <input class="form-control"
+                   id="inputName"
+                   type="text"
+                   placeholder=""
+                   ng-model="recipeDetails.Name"
+                   required />
+        </div>
+
+        <div class="col-md-2">
+            <label class="control-label" for="inputDesc">Description</label>
+
+        </div>
+        <div class="col-md-10">
+
+            <input class="form-control"
+                   id="inputDesc"
+                   type="text"
+                   placeholder=""
+                   ng-model="recipeDetails.Description"
+                   required />
+        </div>
+
+        <div class="col-md-2">
+            <label class="control-label" for="inputStatus">Status</label>
+
+        </div>
+        <div class="col-md-10">
+
+            <input class="form-control"
+                   id="inputStatus"
+                   type="text"
+                   placeholder=""
+                   ng-model="recipeDetails.Status"
+                   required />
+        </div>
+        <div class="col-md-12">
+            <input type="button" value="save" class="btn pull-left" data-ng-click="saveRecipe(recipeDetails)">
+        </div>
     </div>
-    <div class="col-md-12">
-        <input type="button" value="save" class="btn pull-left" data-ng-click="saveRecipe(recipeDetails)">
-    </div>
-    </div>
+
+    <div>{{saveMessage}}</div>
+</div>

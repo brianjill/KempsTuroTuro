@@ -11,6 +11,12 @@ kempsApp.factory('recipeService', ['$resource',
                     method: 'GET',
                     isArray: false,
                     params: { id: '@id' }
+                },
+                saveRecipe: {
+                    url: baseUrl + '/recipe',
+                    method: 'POST',
+                    isArray: false,
+                    params: { verb: "Save" }
                 }
             });
 
@@ -21,13 +27,17 @@ kempsApp.factory('recipeService', ['$resource',
 
         var getRecipeDetails = function (recipeId) {
             
-            var recipeDetails = recipe.getRecipe({ id: recipeId });
-            return recipeDetails;
+            return recipe.getRecipe({ id: recipeId });
+        }
+
+        var saveRecipe = function(recipeDetails) {
+            recipe.saveRecipe(recipeDetails);
         }
 
         return {
             getAllRecipes: getAllRecipes,
-            getRecipeDetails: getRecipeDetails
+            getRecipeDetails: getRecipeDetails,
+            saveRecipe: saveRecipe
         }
     }
 ]);

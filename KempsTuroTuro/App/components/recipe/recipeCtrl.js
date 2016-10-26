@@ -1,5 +1,5 @@
-﻿kempsApp.controller('recipeCtrl', ['$scope', '$http', 'recipeService', '$timeout',
-    function ($scope, $http, recipeService, $timeout) {
+﻿kempsApp.controller('recipeCtrl', ['$scope', '$http', 'recipeService',
+    function ($scope, $http, recipeService) {
         $scope.enableRecipeDetails = false;
         
         recipeService.getAllRecipes()
@@ -29,7 +29,17 @@
 
         };
 
-        $scope.saveRecipe = function (recipeDetails) {
+        $scope.saveRecipe = function(recipeDetails) {
+            console.log("saved");
+            recipeService.saveRecipe(recipeDetails);
+            $scope.saveMessage = "Recipe has been updated successfully";
+
+            setTimeout(function() {
+                    $scope.$apply(function() {
+                        $scope.enableRecipeDetails = false;
+                    });
+                },
+                1000);
 
         };
     }
